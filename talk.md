@@ -1,4 +1,4 @@
-# Introduction to plotting
+# Introduction to matplotlib
 
 ## Olav Vahtras
 
@@ -31,42 +31,39 @@ layout: false
 ...
 3.141593 0.000000
 ```
-
 --
 
-* How do you get to 
+* How do you get to  this
 
 <img src="data/sin.png" height="250" />
 
---
-
 ---
 
+### Next
+
 * Import the plotting library
---
 
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
 ```
-* Load the data from file
 --
+
+* Load the data from file
 ```python
 data = np.loadtxt('filename')
 ```
-* Call the *plot* function
 --
+
+* Call the `plot` function
 ```
 plt.plot(data[:, 0], data[:, 1])
+```
+--
 
 * Show the result
---
 ```
 plt.show()
 ```
-
-* A common abbreviation (*de facto* standard)
 --
 
-
-##
