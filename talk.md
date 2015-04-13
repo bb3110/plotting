@@ -75,15 +75,15 @@ plt.show()
 
 #### Refinement
 
-* Change color, line-style
+* Change color, linestyle, linewidth
 --
 
 
-* Change window size
+* Change window size (ylim)
 --
 
 
-* Change x-ticks
+* Change xticks
 --
 
 
@@ -96,8 +96,28 @@ plt.show()
 
 
 * Legends
---
 
+---
+
+#### A more advanced example
+```python
+fig, ax1 = plt.subplots()
+ax1.plot(orbital, dataset1, 'b-')
+ax1.set_xlabel('orbital')
+# Make the y-axis label and tick labels match the line color.
+ax1.set_ylabel('occupied', color='b')
+for tl in ax1.get_yticklabels():
+    tl.set_color('b')
+ax2 = ax1.twinx()
+ax2.plot(orbital, dataset2, 'r-')
+ax2.set_ylabel('virtual', color='r')
+ax2.set_ylim(ax2.get_ylim()[::-1])
+for tl in ax2.get_yticklabels():
+    tl.set_color('r')
+```
+<img src="img/dualplot.png" height="325"/>
+
+---
 
 ### In practice
 

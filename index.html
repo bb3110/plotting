@@ -134,11 +134,11 @@ class: center, middle, inverse
 
 ---
 
-# Introduction to plotting
+# Introduction to matplotlib
 
 ## Olav Vahtras
 
-KTH
+Leiden 2015-04-13
 
 ---
 
@@ -167,45 +167,114 @@ layout: false
 ...
 3.141593 0.000000
 ```
-
 --
 
-* How do you get to 
+* How do you get to  this
 
 &lt;img src=&#34;data/sin.png&#34; height=&#34;250&#34; /&gt;
 
---
-
 ---
 
-* Import the plotting library
---
+### Next
 
+* Import the plotting library
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
 ```
-* Load the data from file
 --
+
+* Load the data from file
 ```python
 data = np.loadtxt(&#39;filename&#39;)
 ```
-* Call the *plot* function
 --
+
+* Call the `plot` function
 ```
 plt.plot(data[:, 0], data[:, 1])
+```
+--
 
 * Show the result
---
 ```
 plt.show()
 ```
 
-* A common abbreviation (*de facto* standard)
+*Note:* in ipython notebook you may want to do
+```
+%matplotlib inline
+```
+---
+
+### Next? 
+
+#### Refinement
+
+* Change color, linestyle, linewidth
 --
 
 
-##
+* Change window size (ylim)
+--
+
+
+* Change xticks
+--
+
+
+* Set title
+--
+
+
+* Multi-line plots
+--
+
+
+* Legends
+
+---
+
+#### A more advanced example
+```python
+fig, ax1 = plt.subplots()
+ax1.plot(orbital, dataset1, &#39;b-&#39;)
+ax1.set_xlabel(&#39;orbital&#39;)
+# Make the y-axis label and tick labels match the line color.
+ax1.set_ylabel(&#39;occupied&#39;, color=&#39;b&#39;)
+for tl in ax1.get_yticklabels():
+    tl.set_color(&#39;b&#39;)
+ax2 = ax1.twinx()
+ax2.plot(orbital, dataset2, &#39;r-&#39;)
+ax2.set_ylabel(&#39;virtual&#39;, color=&#39;r&#39;)
+ax2.set_ylim(ax2.get_ylim()[::-1])
+for tl in ax2.get_yticklabels():
+    tl.set_color(&#39;r&#39;)
+```
+&lt;img src=&#34;img/dualplot.png&#34; height=&#34;325&#34;/&gt;
+
+---
+
+### In practice
+
+* How do you do when need a particlar type of figure?
+--
+
+
+* Go to the matplotlib gallery: http://matplotlib.org/gallery
+--
+
+
+* Try some exercises at
+
+http://scipy-lectures.github.io/intro/matplotlib/matplotlib.html#other-types-of-plots-examples-and-exercises
+      
+
+---
+
+More
+
+&lt;img src=&#34;img/mplcover.png&#34;/&gt;
     </textarea>
 
     <script src="/plotting/refreeze/js/remark-latest.min.js" type="text/javascript"></script>
