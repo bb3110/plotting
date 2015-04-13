@@ -42,7 +42,6 @@ layout: false
 ### Next
 
 * Import the plotting library
-
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -65,5 +64,58 @@ plt.plot(data[:, 0], data[:, 1])
 ```
 plt.show()
 ```
+
+*Note:* in ipython notebook you may want to do
+```
+%matplotlib inline
+```
+---
+
+### Next? 
+
+#### Refinement
+
+* Change color, line-style
 --
 
+
+* Change window size
+--
+
+
+* Change x-ticks
+--
+
+
+* Set title
+--
+
+
+* Multi-line plots
+--
+
+
+* Legends
+--
+
+
+### In practice
+
+* How do you do when need a particlar type of figure?
+--
+
+
+* Go to the matplotlib gallery: http://matplotlib.org/gallery
+--
+
+
+* Try some exercises at
+
+http://scipy-lectures.github.io/intro/matplotlib/matplotlib.html#other-types-of-plots-examples-and-exercises
+      
+
+---
+
+More
+
+<img src="img/mplcover.png"/>
